@@ -1,20 +1,20 @@
 // While adding out new module add out module to src/module.rs ALL_MODULES const array also.
-mod aws;
+// mod aws;
 mod character;
 mod cmake;
 mod cmd_duration;
-mod conda;
-mod crystal;
+// mod conda;
+// mod crystal;
 pub(crate) mod custom;
-mod dart;
-mod deno;
+// mod dart;
+// mod deno;
 mod directory;
 mod docker_context;
-mod dotnet;
-mod elixir;
-mod elm;
+// mod dotnet;
+// mod elixir;
+// mod elm;
 mod env_var;
-mod erlang;
+// mod erlang;
 mod gcloud;
 mod git_branch;
 mod git_commit;
@@ -22,42 +22,42 @@ mod git_state;
 mod git_status;
 mod golang;
 mod helm;
-mod hg_branch;
+// mod hg_branch;
 mod hostname;
-mod java;
+// mod java;
 mod jobs;
-mod julia;
-mod kotlin;
+// mod julia;
+// mod kotlin;
 mod kubernetes;
 mod line_break;
-mod lua;
+// mod lua;
 mod memory_usage;
-mod nim;
+// mod nim;
 mod nix_shell;
-mod nodejs;
-mod ocaml;
-mod openstack;
+// mod nodejs;
+// mod ocaml;
+// mod openstack;
 mod package;
-mod perl;
-mod php;
-mod purescript;
+// mod perl;
+// mod php;
+// mod purescript;
 mod python;
-mod red;
+// mod red;
 mod ruby;
 mod rust;
-mod scala;
+// mod scala;
 mod shell;
 mod shlvl;
 mod singularity;
 mod status;
-mod swift;
+// mod swift;
 mod terraform;
 mod time;
 mod username;
 mod utils;
-mod vagrant;
+// mod vagrant;
 mod vcsh;
-mod zig;
+// mod zig;
 
 #[cfg(feature = "battery")]
 mod battery;
@@ -74,65 +74,65 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
         match module {
             // Keep these ordered alphabetically.
             // Default ordering is handled in configs/starship_root.rs
-            "aws" => aws::module(context),
+            // "aws" => aws::module(context),
             #[cfg(feature = "battery")]
             "battery" => battery::module(context),
             "character" => character::module(context),
             "cmake" => cmake::module(context),
             "cmd_duration" => cmd_duration::module(context),
-            "conda" => conda::module(context),
-            "dart" => dart::module(context),
-            "deno" => deno::module(context),
+            // "conda" => conda::module(context),
+            // "dart" => dart::module(context),
+            // "deno" => deno::module(context),
             "directory" => directory::module(context),
             "docker_context" => docker_context::module(context),
-            "dotnet" => dotnet::module(context),
-            "elixir" => elixir::module(context),
-            "elm" => elm::module(context),
-            "erlang" => erlang::module(context),
+            // "dotnet" => dotnet::module(context),
+            // "elixir" => elixir::module(context),
+            // "elm" => elm::module(context),
+            // "erlang" => erlang::module(context),
             "env_var" => env_var::module(context),
             "gcloud" => gcloud::module(context),
             "git_branch" => git_branch::module(context),
             "git_commit" => git_commit::module(context),
             "git_state" => git_state::module(context),
             "git_status" => git_status::module(context),
-            "golang" => golang::module(context),
+            // "golang" => golang::module(context),
             "helm" => helm::module(context),
-            "hg_branch" => hg_branch::module(context),
+            // "hg_branch" => hg_branch::module(context),
             "hostname" => hostname::module(context),
-            "java" => java::module(context),
+            // "java" => java::module(context),
             "jobs" => jobs::module(context),
-            "julia" => julia::module(context),
-            "kotlin" => kotlin::module(context),
+            // "julia" => julia::module(context),
+            // "kotlin" => kotlin::module(context),
             "kubernetes" => kubernetes::module(context),
             "line_break" => line_break::module(context),
-            "lua" => lua::module(context),
+            // "lua" => lua::module(context),
             "memory_usage" => memory_usage::module(context),
-            "nim" => nim::module(context),
+            // "nim" => nim::module(context),
             "nix_shell" => nix_shell::module(context),
-            "nodejs" => nodejs::module(context),
-            "ocaml" => ocaml::module(context),
-            "openstack" => openstack::module(context),
+            // "nodejs" => nodejs::module(context),
+            // "ocaml" => ocaml::module(context),
+            // "openstack" => openstack::module(context),
             "package" => package::module(context),
-            "perl" => perl::module(context),
-            "php" => php::module(context),
-            "purescript" => purescript::module(context),
+            // "perl" => perl::module(context),
+            // "php" => php::module(context),
+            // "purescript" => purescript::module(context),
             "python" => python::module(context),
-            "red" => red::module(context),
+            // "red" => red::module(context),
             "ruby" => ruby::module(context),
             "rust" => rust::module(context),
-            "scala" => scala::module(context),
+            // "scala" => scala::module(context),
             "shell" => shell::module(context),
             "shlvl" => shlvl::module(context),
             "singularity" => singularity::module(context),
-            "swift" => swift::module(context),
+            // "swift" => swift::module(context),
             "status" => status::module(context),
             "terraform" => terraform::module(context),
             "time" => time::module(context),
-            "crystal" => crystal::module(context),
+            // "crystal" => crystal::module(context),
             "username" => username::module(context),
-            "vagrant" => vagrant::module(context),
+            // "vagrant" => vagrant::module(context),
             "vcsh" => vcsh::module(context),
-            "zig" => zig::module(context),
+            // "zig" => zig::module(context),
             _ => {
                 eprintln!("Error: Unknown module {}. Use starship module --list to list out all supported modules.", module);
                 None
@@ -142,16 +142,12 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
 
     let elapsed = start.elapsed();
     log::trace!("Took {:?} to compute module {:?}", elapsed, module);
-    if elapsed.as_millis() < 1 {
-        // If we take less than 1ms to compute a None, then we will not return a module at all
-        // if we have a module: default duration is 0 so no need to change it
-        m
-    } else {
-        // if we took more than 1ms we want to report that and so--in case we have None currently--
-        // need to create an empty module just to hold the duration for that case
-        m.get_or_insert_with(|| context.new_module(module)).duration = elapsed;
-        m
+
+    if ! elapsed.as_millis() < 1 {
+        m.get_or_insert_with(|| context.new_module(module)).duration = elapsed
     }
+
+    m
 }
 
 pub fn description(module: &str) -> &'static str {
