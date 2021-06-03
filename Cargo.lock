@@ -983,9 +983,9 @@ dependencies = [
 
 [[package]]
 name = "semver"
-version = "1.0.0-rc.2"
+version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f615cc6936069c96dec0a7d421825f006dd1f5047ed7d6b54816984d8bb8c06"
+checksum = "965645ad4a66d27024921aa1e2e47a76524a4cfd55e038b62104eca65c363230"
 
 [[package]]
 name = "serde"
