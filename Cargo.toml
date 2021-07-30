@@ -64,7 +64,7 @@ rand = "0.8"
 serde = { version = "1.0", features = ["derive"] }
 indexmap = { version ="1.6", features = ["serde"] }
 # notify-rust = { version = "4.4", optional = true }
-semver = "1.0.0-rc"
+semver = "1.0.4"
 which = "4.1"
 shadow-rs = "0.5"
 versions = "3.0"
