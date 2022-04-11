@@ -70,7 +70,7 @@ shadow-rs = "0.5"
 versions = "3.0"
 strsim = "0.10"
 
-process_control = { version = "3.0", features = ["crossbeam-channel"] }
+process_control = { version = "3.4", features = ["crossbeam-channel"] }
 
 # Optional/http:
 attohttpc = { version = "0.17", optional = true, default-features = false, features = ["tls", "form"] }
