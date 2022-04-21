@@ -67,7 +67,7 @@ indexmap = { version ="1.6", features = ["serde"] }
 semver = "1.0.0-rc"
 which = "4.1"
 shadow-rs = "0.5"
-versions = "3.0"
+versions = "4.1"
 strsim = "0.10"
 
 process_control = { version = "3.0", features = ["crossbeam-channel"] }
